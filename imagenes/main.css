@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+
+
+.carousel-inner{
+    height: 35vh !important;
+  
+}
+
+.list-group{
+    display: flex !important;
+    flex-direction: row !important;
+
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+.categories{
+    display: flex !important;
+    justify-content: space-between;
+    padding: 20px 00px 25px;
+    flex-wrap: wrap !important;
+}
+
+.card-footer{
+    background-color: #ffffff !important;
+}
+.col{
+    padding: 0px 15px 15px 15px !important;
+    
+}
+
+
+
+
+.bodyContainer {
+    width: 100%;
+    flex: 1; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+.container-form{
+    padding-top: 5vh;
+    width: 30vw;
+}
+
+.form-control{
+    border: solid 1px rgb(128, 125, 125) !important;
+}
+
+
+.row{
+    margin-bottom: 15vh;
+
+}
+
+.table{
+    border: solid 1px rgb(128, 125, 125) !important;
+}
+
+.card-img-top{
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+footer {
+    margin-top: auto;
+  }
+  .footerCOHORT{
+    color: white;
+  }
+
+input{
+    border: 1px solid #5241b3 !important;
+
+
+}
+
+.carousel-item img{
+    height: 500px !important;
+    object-fit: cover;}
+
+
+
+@media (max-width: 768px) {
+    .carousel-item img{
+        height: 100%;
+        object-fit: cover; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .carousel-item img{
+        height: 100%;
+        object-fit: cover; 
+    }
+}
