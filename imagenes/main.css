@@ -91,8 +91,11 @@ div.card.text-center img{
 div.card.text-center{
     border-radius: 15px;
 
-    
+    box-shadow: -1px 0px 20px 4px rgba(1, 1, 1, 0.3);
 }
+
+    
+
 
 p.card-text{
  
@@ -100,7 +103,7 @@ p.card-text{
 }
 
 div.card.text-center:hover{
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 
