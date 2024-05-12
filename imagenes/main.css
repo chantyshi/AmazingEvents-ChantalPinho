@@ -18,6 +18,17 @@
   
 }
 
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+   max-height: 100% !important;
+}
+
+
+.tituloCarrusel{
+    font-size: 4vh !important;
+    font-weight: 300;
+
+}
+
 .list-group{
     display: flex !important;
     flex-direction: row !important;
@@ -37,6 +48,8 @@
 
 .card-footer{
     background-color: #ffffff !important;
+    display: flex !important;
+    justify-content: flex-end !important; /* O ajusta según sea necesario */
 }
 .col{
     padding: 0px 15px 15px 15px !important;
@@ -62,6 +75,36 @@
 .form-control{
     border: solid 1px rgb(128, 125, 125) !important;
 }
+
+
+div.card.text-center img{
+    height: 35vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+ 
+}
+
+div.card.text-center{
+    border-radius: 15px;
+
+    
+}
+
+p.card-text{
+ 
+    min-height: 14vh;
+}
+
+div.card.text-center:hover{
+    opacity: 0.5;
+}
+
+
+
 
 
 .row{
