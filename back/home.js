@@ -195,41 +195,76 @@ const data = {
     ],
   };
 
+
   let padreTarjetas = document.getElementById("eventos");
 
+  pintarTarjeta(data.events, padreTarjetas);
+  
+  function pintarTarjeta(arregloAPintar, divPadre) {
+      for (let i = 0; i < arregloAPintar.length; i++) {
+          crearTarjeta(divPadre, arregloAPintar[i]);
+      }
+  }
+  
+  function crearTarjeta(divPadre, tarjeta) {
+      let nuevaTarjeta = document.createElement('div');
+      nuevaTarjeta.className = 'col';
+  
+      nuevaTarjeta.innerHTML = `
+      <div class="card text-center">
+          <img src="${tarjeta.image}">
+          <div class="card-body">
+              <h5 class="card-title">${tarjeta.name}</h5>
+              <p class="card-text">${tarjeta.description}</p>
+              <div class="card-footer d-flex justify-content-around">
+                  <p class='d-flex align-items-center'>$${tarjeta.price}</p>
+                  <a href="details.html?_id=${tarjeta._id}" class="btn btn-primary">Details</a>
+              </div>
+          </div>
+      </div>`;
+  
+      divPadre.appendChild(nuevaTarjeta);
+  }
 
 
-
-
- pintarTarjeta(data.events, padreTarjetas)
-
-
-  function pintarTarjeta(arregloAPintar, divPadre){
-    for(let i=0; i < arregloAPintar.length; i++){
-        crearTarjeta(divPadre, arregloAPintar[i])
-    }
+  function limpiarContenedor(){
+    padreTarjetas.innerHTML = ''
   }
 
 
 
-  function crearTarjeta(divPadre, tarjeta){
-    let nuevaTarjeta = document.createElement('div')
-    nuevaTarjeta.className = 'col'
-
-    nuevaTarjeta.innerHTML =   `
-    <div class="card text-center">
-    <img src="${tarjeta.image}">
-    <div class="card-body">
-      <h5 class="card-title">${tarjeta.name}</h5>
-      <p class="card-text">${tarjeta.description}</p>
-      <div class="card-footer d-flex justify-content-around ">
-        <p class='d-flex align-items-center'>$15</p>     <a href="details.html" class="btn btn-primary">Details</a>
-      </div>
 
 
-    </div>
-    
-  </div>`
+// // Obtener el elemento de los checkboxes
+// let checkboxsCategorias = document.getElementById('categorias');
+// console.log(checkboxsCategorias);
+
+// // Definir la función para filtrar las tarjetas por categoría
+// function filtrarTarjetasPorCategoria(evento) {
+//   console.log(evento);
+//   console.log(evento.target);
+//   console.log(evento.target.value);
+
+//   let checkboxsCategoriasChecked = document.querySelectorAll('input[type=checkbox]:checked');
+//   let tarjetasFiltradas = data.events.filter(tarjeta => {
+//     for (let i = 0; i < checkboxsCategoriasChecked.length; i++) {
+//       if (checkboxsCategoriasChecked[i].value == tarjeta.category) {
+//         return tarjeta;
+//       }
+//     }
+//   });
+
+//   if (checkboxsCategoriasChecked.length !== 0) {
+//     limpiarContenedor();
+//     pintarTarjeta(tarjetasFiltradas, padreTarjetas);
+//   } else {
+//     limpiarContenedor();
+//     pintarTarjeta(data.events, padreTarjetas);
+//   }
+// }
+
+// // Añadir el event listener al checkboxsCategorias
+// checkboxsCategorias.addEventListener('change', filtrarTarjetasPorCategoria);
 
 
 
@@ -239,9 +274,74 @@ const data = {
 
 
 
-padreTarjetas.appendChild(nuevaTarjeta)
 
 
 
-    console.log(nuevaTarjeta);
+
+
+
+
+
+
+
+
+
+// //Filtrar por busqueda
+// let buscarPorTarjeta = document.getElementById('BuscadorTarjetas')
+// buscarPorTarjeta.addEventListener('input',(event) => {
+//   let tarjetasFiltradasPorBuscador = data.events.filter(tarjeta => tarjeta.name.toLowerCase().includes(event.target.value) || tarjeta.description.toLowerCase().includes(event.target.value));
+// limpiarContenedor()
+// pintarTarjeta(tarjetasFiltradasPorBuscador, padreTarjetas)
+// }
+
+
+
+
+
+
+
+
+
+
+// )
+
+
+function mostrarMensajeSinResultados() {
+  let mensaje = document.createElement('div');
+  mensaje.className = 'col text-center';
+  mensaje.innerHTML = `<p>No hay resultados de la búsqueda</p>`;
+  padreTarjetas.appendChild(mensaje);
+}
+
+
+
+
+// Obtener el elemento de los checkboxes
+let checkboxsCategorias = document.getElementById('categorias');
+console.log(checkboxsCategorias);
+
+// Obtener el elemento del campo de búsqueda
+let buscarPorTarjeta = document.getElementById('BuscadorTarjetas');
+
+function aplicarFiltros() {
+    let checkboxsCategoriasChecked = document.querySelectorAll('input[type=checkbox]:checked');
+    let textoBusqueda = buscarPorTarjeta.value.toLowerCase();
+
+    let tarjetasFiltradas = data.events.filter(tarjeta => {
+        let coincideCategoria = checkboxsCategoriasChecked.length === 0 || Array.from(checkboxsCategoriasChecked).some(checkbox => checkbox.value === tarjeta.category);
+        let coincideBusqueda = tarjeta.name.toLowerCase().includes(textoBusqueda) || tarjeta.description.toLowerCase().includes(textoBusqueda);
+        return coincideCategoria && coincideBusqueda;
+    });
+
+    limpiarContenedor();
+    if (tarjetasFiltradas.length > 0) {
+      pintarTarjeta(tarjetasFiltradas, padreTarjetas);
+  } else {
+      mostrarMensajeSinResultados();
   }
+}
+
+
+// Añadir event listeners para aplicar los filtros combinados
+checkboxsCategorias.addEventListener('change', aplicarFiltros);
+buscarPorTarjeta.addEventListener('input', aplicarFiltros);

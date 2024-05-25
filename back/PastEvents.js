@@ -223,9 +223,10 @@ const data = {
     <div class="card-body">
       <h5 class="card-title">${contenidoTarjeta.name}</h5>
       <p class="card-text">${contenidoTarjeta.description}</p>
-      <div class="card-footer d-flex justify-content-around ">
-        <p class='d-flex align-items-center'>$15</p>     <a href="details.html" class="btn btn-primary">Details</a>
-      </div>
+      <div class="card-footer d-flex justify-content-around">
+                  <p class='d-flex align-items-center'>$${contenidoTarjeta.price}</p>
+                  <a href="details.html?_id=${contenidoTarjeta._id}" class="btn btn-primary">Details</a>
+              </div>
 
 
     </div>
