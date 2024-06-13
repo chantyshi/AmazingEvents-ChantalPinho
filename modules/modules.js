@@ -1,4 +1,4 @@
-// modules/utils.js
+// modules/modules.js
 
 // Función para pintar tarjetas
 export function pintarTarjetas(arregloAPintar, divContenedor) {
