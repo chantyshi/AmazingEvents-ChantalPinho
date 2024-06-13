@@ -81,47 +81,57 @@
 
     
  
-<div class="categories ">
+    <div class="categories" >
  
  
-    <ul class="list-group d-flex flex-wrap">
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched">
-          <label class="form-check-label stretched-link" for="firstCheckboxStretched">Music shows</label>
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched">
-          <label class="form-check-label stretched-link" for="secondCheckboxStretched">Gastronomy</label>
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched">
-          <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Art</label>
-        </li>
-        <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="fourthCheckboxStretched">
-            <label class="form-check-label stretched-link" for="fourthCheckboxStretched">Books</label>
+      <ul class="list-group d-flex flex-wrap" id="categorias">
+          <li class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" value="Concert" id="firstCheckboxStretched">
+            <label class="form-check-label stretched-link" for="firstCheckboxStretched">Music shows</label>
           </li>
           <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="fifthCheckboxStretched">
-            <label class="form-check-label stretched-link" for="fifthCheckboxStretched">Culture</label>
+            <input class="form-check-input me-1" type="checkbox" value="Food" id="secondCheckboxStretched">
+            <label class="form-check-label stretched-link" for="secondCheckboxStretched">Gastronomy</label>
           </li>
-      </ul>
-
-
-      <div class="col-md-2 me-3" >
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-</div>
+          <li class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" value="Museum" id="thirdCheckboxStretched">
+            <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Art</label>
+          </li>
+          <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="Books" id="fourthCheckboxStretched">
+              <label class="form-check-label stretched-link" for="fourthCheckboxStretched">Books</label>
+            </li>
+     
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="Cinema" id="sixthCheckboxStretched">
+              <label class="form-check-label stretched-link" for="sixthCheckboxStretched">Cinema</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="Party" id="seventhCheckboxStretched">
+              <label class="form-check-label stretched-link" for="seventhCheckboxStretched">Costume party</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="Race" id="eighthCheckboxStretched">
+              <label class="form-check-label stretched-link" for="eighthCheckboxStretched">Race</label>
+            </li>
+        </ul>
+  
+  
+        <div class="col-md-2 me-3" >
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="BuscadorTarjetas">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+  </div>
+  
 
 
 
 
 <div class="row row-cols-1 row-cols-md-5 g-0 d-flex justify-content-center" id="eventos">
 
-<script src="back/UpcomingEvents.js"></script> 
+<script type="module" src="back/UpcomingEvents.js"></script> 
 
 
   </div>
